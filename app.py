@@ -5,8 +5,8 @@ st.set_page_config(page_title="CYBORG AI", page_icon="🤖")
 
 st.title("🤖 CYBORG AI Assistant")
 
-# Replace YOUR_API_KEY with your actual AIzaSy... key
-API_KEY = "AQ.Ab8RN6KQCzWQYqfg_57LA0KXJPgZLxskVbJ5gTAQf0qdUjl1Gg"
+# Your API key directly in the code
+API_KEY = "AQ.AbBRN6KQCzWQYqf_57LA0KXJPgZLxskvBj5gTAQf8qduJ16G."
 
 client = genai.Client(api_key=API_KEY)
 
@@ -24,7 +24,7 @@ if prompt := st.chat_input("Ask CYBORG something..."):
 
     try:
         response = client.models.generate_content(
-            model="gemini-3.8-flash",
+            model="gemini-2.5-flash",
             contents=prompt,
         )
         with st.chat_message("assistant"):
@@ -32,3 +32,4 @@ if prompt := st.chat_input("Ask CYBORG something..."):
         st.session_state.messages.append({"role": "assistant", "content": response.text})
     except Exception as e:
         st.error(f"Error: {e}")
+        
