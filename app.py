@@ -5,7 +5,7 @@ st.set_page_config(page_title="CYBORG AI", page_icon="🤖")
 
 st.title("🤖 CYBORG AI Assistant")
 
-# Your API key directly in the code
+# Your correct API key
 API_KEY = "AQ.Ab8RN6KQCzWQYqfg_57LA0KXJPgZLxskVbJ5gTAQf0qdUjl1Gg"
 
 # Explicitly tell the client to use the developer API key, not Vertex AI
