@@ -8,7 +8,8 @@ st.title("🤖 CYBORG AI Assistant")
 # Your API key directly in the code
 API_KEY = "AQ.AbBRN6KQCzWQYqf_57LA0KXJPgZLxskvBj5gTAQf8qduJ16G."
 
-client = genai.Client(api_key=API_KEY)
+# Explicitly tell the client to use the developer API key, not Vertex AI
+client = genai.Client(api_key=API_KEY, vertexai=False)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -32,4 +33,3 @@ if prompt := st.chat_input("Ask CYBORG something..."):
         st.session_state.messages.append({"role": "assistant", "content": response.text})
     except Exception as e:
         st.error(f"Error: {e}")
-        
